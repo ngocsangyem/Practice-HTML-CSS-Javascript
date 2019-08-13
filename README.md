@@ -15,15 +15,37 @@
 
 ## Install
 
+npm:
+
 ```sh
-npm install
+npm install -g parcel-bundler
+```
+
+Yarn:
+
+```sh
+yarn global add parcel-bundler
 ```
 
 ## Usage
 
 ```sh
+parcel index.html
+```
+
+### Multiple entry files
+
+```sh
+parcel index.html about.html
+```
+
+Use tokens and create a glob:
+
+```sh
 parcel *.html
 ```
+
+[Read more about Parcel](https://parceljs.org/getting_started.html)
 
 ## Author
 
