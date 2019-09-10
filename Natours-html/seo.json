@@ -1,0 +1,24 @@
+{
+	"SEO": {
+		"AppName": "Home",
+		"mobile_color": "#000000",
+		"cfg_name": "DEMO SITE",
+		"cfg_url": "demo-site.com",
+		"analytics": "UA-XXXXXXXXXXX-1",
+		"seo_lang": "en",
+		"seo_geo": "EN",
+		"seo_geo_latitude": "XXXXXX",
+		"seo_geo_longitude": "XXXXXXX",
+		"app_facebook_ID": "XXXXXX",
+		"cfg_description": "Natours-html ",
+		"cfg_keywords": "Natours-html",
+		"cfg_author": "gulp-simple",
+		"cfg_sitenameurl": "yem",
+		"app_facebook_adminsID": "XXXXXXX,XXXXXXX",
+		"app_appleID": "XXX-XXX-XXX-XXXX",
+		"cfg_sitenameurlgoogle": "XXXXXXXXXXXXXX",
+		"verf_google": "",
+		"verf_bing": "",
+		"verf_yandex": ""
+	}
+}

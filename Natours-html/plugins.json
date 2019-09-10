@@ -1,0 +1,4 @@
+{
+	"styles": ["src/assets/css/grid.css"],
+	"scripts": ["src/assets/js/test.js"]
+}

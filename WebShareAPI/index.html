@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="share-content">
+			<h1 class="share-title">Good day for sharing</h1>
+			<p class="share-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto fuga quo culpa,
+				delectus qui nemo
+				possimus ex natus laborum. Laboriosam nihil itaque, sapiente porro libero illum ex velit quasi
+				recusandae.
+			</p>
+			<button class="btn btn-primary" id="shareBtn">Share this story</button>
+		</div>
+	</div>
+	<div class="overlay" id="overlay"></div>
+	<div class="share-group" id="shareGroup">
+		<h2 class="share-group-title">Share now</h2>
+		<div class="share-group-btn">
+			<button class="btn btn-social btn-social-1 ">Social link</button>
+			<button class="btn btn-social btn-social-2">Social link</button>
+			<button class="btn btn-social btn-social-3">Social link</button>
+		</div>
+	</div>
+	<script>
+		const shareButton = document.getElementById('shareBtn');
+		const overlay = document.getElementById('overlay');
+		const shareGroup = document.getElementById('shareGroup');
+
+		const titleCurrentPage = window.document.title;
+		const urlCurrentPage = window.document.location.href;
+
+		shareButton.addEventListener('click', () => {
+			if (navigator.share) {
+				navigator.share({
+					title: `${title}`,
+					url: `${url}`
+				}).then(() => {
+					console.log('Thanks for sharing');
+				}).catch((err) => {
+					console.log(err);
+				})
+			} else {
+				overlay.classList.add('show-share');
+				shareGroup.classList.add('show-share');
+			}
+		})
+
+		overlay.addEventListener('click', () => {
+			overlay.classList.remove('show-share');
+			shareGroup.classList.remove('show-share');
+		})
+	</script>
+</body>
+
+</html>
