@@ -1,0 +1,94 @@
+.emty-block
+	height: 100vh
+.audio-image-container
+	position: relative
+	img
+		width: 100%
+		height: 500px
+		object-fit: cover
+	.obw-audio-button, .obw-image-overlay
+		position: absolute
+	.obw-audio-button
+		bottom: 0
+		padding: 10px
+		color: #ffffff
+		font-size: 20px
+	&.audio-active
+		.obw-audio-button
+			i
+				&:before
+					content: "\f028"
+	&.audio-init
+		.obw-audio-button
+			i
+				&:before
+					content: "\f6a9"
+	@media (min-width: 992px)
+		cursor: pointer
+
+
+.audio-button-container
+	font-size: 14px
+	font-weight: 700
+	font-family: 'Roboto', sans-serif
+	border-radius: 2px
+	background-color: #ffa726
+	max-width: 150px
+	padding: 15px
+	position: relative
+	display: flex
+	align-items: center
+	text-transform: uppercase
+	cursor: pointer
+	overflow: hidden
+	margin-bottom: 10px
+	.audio-source
+		opacity: 0
+		visibility: hidden
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+	.audio-actions, .audio-duration
+		position: relative
+		z-index: 2
+	.audio-actions
+		.audio-icon
+			width: 13px
+			height: 13px
+			// display: inline-block
+			// vertical-align: middle
+			display: none
+		path
+			fill: #ffffff
+		.audio-text
+			display: inline-block
+			margin-left: 5px
+			color: rgba(255, 255, 255, 0.77)
+			display: none
+		.audio-action
+			display: flex
+			align-items: center
+	.audio-duration
+		color: rgba(255, 255, 255, 0.77)
+		padding-left: 10px
+		opacity: .4
+	.audio-progress
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 100%
+		background-color: #ffb74d
+		// background-color: red
+		pointer-events: none
+		// transition: width .2s ease-in-out
+	&.audio-init
+		.audio-text-play, .audio-icon-play
+			display: inline-block
+	&.audio-active
+		.audio-text-pause, .audio-icon-pause
+			display: inline-block
+	&.audio-pause
+		.audio-text-resume, .audio-icon-resume
+			display: inline-block
