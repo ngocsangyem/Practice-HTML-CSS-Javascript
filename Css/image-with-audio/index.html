@@ -6,14 +6,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./css/custom.css">
 		<link rel="stylesheet" href="./css/main.css">
 		<title>Document</title>
 	</head>
 
 	<body>
-		<div class="emty-block"></div>
-		<div class="audio-image-container audio-init js-audio"
-			data-audio="https://www.ourbetterworld.org/sites/default/files/2019-10/Accident%20Scene%20Witness%204.mp3">
+		<div class="audio-container js-audio audio-active audio-init">
+			<audio src="https://www.ourbetterworld.org/sites/default/files/2019-10/Accident%20Scene%20Witness%204.mp3"
+				class="audio"></audio>
+			<div class="obw-audio-button">
+				<i class="fas fa-volume-mute"></i>
+			</div>
+		</div>
+		<div class="empty-block">
+			<img src="./img/image-4.jpeg" alt="">
+			<h3>No sound in here</h3>
+		</div>
+		<div class="empty-block">
+			<img src="./img/image-5.jpeg" alt="">
+			<h3>No sound in here</h3>
+		</div>
+		<div class="audio-container audio-init js-audio has-image">
+			<audio src="./audio/shirley.mp3" class="audio"></audio>
 			<div class="obw-image">
 				<img src="./img/image-3.jpeg" alt="">
 			</div>
@@ -21,9 +37,12 @@
 				<i class="fas fa-volume-mute"></i>
 			</div>
 		</div>
-		<div class="emty-block"></div>
-		<!-- <div class="audio-button-container audio-init js-audio audio-has-animation"
-			data-audio="https://static01.nyt.com/newsgraphics/2017/11/22/chicago-inv/db14dce8dfe269ee163bffcf2d51ce45671277d6/audio/shirley.mp3">
+		<div class="empty-block">
+			<img src="./img/image-6.jpeg" alt="">
+			<h3>No sound in here</h3>
+		</div>
+		<div class="audio-button-container audio-init js-audio audio-has-animation">
+			<audio src="./audio/Accident Scene Witness 4.mp3" class="audio"></audio>
 			<div class="audio-actions">
 				<div class="audio-action audio-action-play">
 					<div class="audio-icon audio-icon-play">
@@ -56,10 +75,13 @@
 			<div class="audio-duration">
 			</div>
 			<div class="audio-progress"></div>
-		</div> -->
-		<div class="emty-block"></div>
-		<!-- <div class="audio-image-container audio-init js-audio"
-			data-audio="https://www.ourbetterworld.org/sites/default/files/2019-10/Vientiane_SOT_11.mp3">
+		</div>
+		<div class="empty-block">
+			<img src="./img/image-7.jpeg" alt="">
+			<h3>No sound in here</h3>
+		</div>
+		<div class="audio-container audio-init js-audio has-image">
+			<audio src="./audio/Accident Scene Witness 4.mp3" class="audio"></audio>
 			<div class="obw-image">
 				<img src="./img/image-2.jpeg" alt="">
 			</div>
@@ -67,7 +89,11 @@
 				<i class="fas fa-volume-mute"></i>
 			</div>
 		</div>
-		<div class="emty-block"></div> -->
+		<div class="empty-block">
+			<img src="./img/image-5.jpeg" alt="">
+			<h3>No sound in here</h3>
+		</div>
+		<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 		<script src="./js/main.js"></script>
 	</body>
 

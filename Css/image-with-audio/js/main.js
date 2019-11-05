@@ -1,37 +1,27 @@
 (function() {
     let timer;
     const jsAudioEl = document.getElementsByClassName('js-audio');
-    const audioHasAnimationEl = document.getElementsByClassName(
-        'audio-has-animation'
-    );
-    const jsAudioArray = domToArray(jsAudioEl);
-    const audioHasAnimationArray = domToArray(audioHasAnimationEl);
+    const jsAudioArray = nodeListToArray(jsAudioEl);
+    const chapterContainer = document.querySelectorAll('.sh-chapter-container');
 
-    function domToArray(dom) {
+    function nodeListToArray(dom) {
         return Array.from(dom);
     }
 
     jsAudioArray.forEach(element => {
-        const doc = document.documentElement;
-        const audioSrc = element.getAttribute('data-audio');
-        const audio = new Audio(audioSrc);
-        const viewportOffset = element.getBoundingClientRect();
-        const elOffsetTop = viewportOffset.top;
-        const elHeight = element.offsetHeight;
-        const elementPosition = elOffsetTop + elHeight;
-
-        let lastScrollTop = 0;
+        const audio = element.querySelector('.audio');
 
         element.addEventListener('click', function(event) {
-            if (!audio.paused) {
-                element.classList.remove('audio-active');
-                element.classList.add('audio-pause');
-                pauseAudio(audio);
+            const currentAudio = event.target.querySelector('.audio');
+
+            if (!currentAudio.paused) {
+                swapClass(element, 'audio-active', 'audio-pause');
+                pauseAudio(currentAudio);
             } else {
                 element.classList.remove('audio-init');
-                element.classList.remove('audio-pause');
-                element.classList.add('audio-active');
-                playAudio(audio);
+                swapClass(element, 'audio-pause', 'audio-active');
+                pauseAllAudio();
+                playAudio(currentAudio);
             }
         });
 
@@ -42,60 +32,52 @@
 
         audio.addEventListener('pause', function(event) {
             clearTimeout(timer);
-            if (element.classList.contains('audio-image-container')) {
-                element.classList.add('audio-init');
-            }
-
-            if (element.classList.contains('audio-has-animation')) {
-                element.classList.remove('audio-active');
-                element.classList.add('audio-pause');
-            }
+            swapClass(element, 'audio-active', 'audio-pause');
         });
 
         audio.addEventListener('ended', function() {
-            element.classList.remove('audio-active');
-            element.classList.add('audio-init');
+            swapClass(element, 'audio-pause', 'audio-init');
         });
 
-        getDuration(audioSrc, element);
+        getDuration(audio.src, element);
 
-        window.addEventListener(
-            'scroll',
-            function() {
-                const windowScrollTop =
-                    (window.pageYOffset || doc.scrollTop) -
-                    (doc.clientTop || 0);
-                const elOffsetTopOnScroll = viewportOffset.top;
-                if (windowScrollTop > lastScrollTop) {
-                    if (windowScrollTop >= elOffsetTopOnScroll + elHeight) {
-                        audio.pause();
-                    }
-                } else {
-                    if (windowScrollTop <= elOffsetTop + elHeight) {
-                        audio.pause();
-                    }
-                }
-                lastScrollTop = windowScrollTop <= 0 ? 0 : windowScrollTop; // For Mobile or negative scrolling
-            },
-            false
+        window.addEventListener('scroll', function() {
+            if (!isInView(element) && !audio.paused) {
+                pauseAudio(audio);
+            }
+        });
+    });
+
+    function swapClass(element, oldClass, newClass) {
+        element.classList.remove(oldClass);
+        element.classList.add(newClass);
+    }
+
+    function isInView(el) {
+        const scroll = window.scrollY || window.pageYOffset;
+        const boundsTop = el.getBoundingClientRect().top + scroll;
+
+        const viewport = {
+            top: scroll,
+            bottom: scroll + window.innerHeight
+        };
+
+        const bounds = {
+            top: boundsTop,
+            bottom: boundsTop + el.clientHeight
+        };
+
+        return (
+            (bounds.bottom >= viewport.top &&
+                bounds.bottom <= viewport.bottom) ||
+            (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
         );
-    });
+    }
 
-    audioHasAnimationArray.forEach(element => {
-        const audioSrc = element.getAttribute('data-audio');
-        const audio = new Audio(audioSrc);
-    });
-
-    function isInViewPort(elm) {
-        const doc = document.documentElement;
-        const viewportOffset = elm.getBoundingClientRect();
-        const elmTop = viewportOffset.top;
-        const elmBottom = elmTop + elm.offsetHeight;
-        const viewportTop =
-            (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-        const viewportBottom = viewportTop + window.innerHeight;
-
-        return elmTop >= viewportTop && elmBottom <= viewportBottom;
+    function pauseAllAudio() {
+        jsAudioArray.forEach(element => {
+            element.querySelector('.audio').pause();
+        });
     }
 
     function audioProgress(duration, audio, element) {

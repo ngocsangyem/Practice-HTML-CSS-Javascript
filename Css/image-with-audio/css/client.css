@@ -1,0 +1,25 @@
+/**remove blue border for navbar*/
+@media (min-width: 1100px) {
+
+	.Theme-NavigationBarItem.Theme-ActiveNavigationBarItem,
+	.Theme-NavigationBarItem:hover {
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+}
+
+/** Fix menu mobile*/
+
+.Theme-Header .Navigation__hamburger:hover {
+	background-color: transparent;
+}
+
+.Theme-NavigationBar {
+	top: 98px;
+}
+
+@media (min-width: 900px) {
+	.Theme-NavigationBar {
+		top: 98px;
+	}
+}
