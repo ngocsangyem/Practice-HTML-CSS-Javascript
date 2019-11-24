@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #333333;
+}
+
+header, footer {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.animation {
+	height: 100vh;
+	background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+	padding: 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+.animation .paper-plane {
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	transform: translateY(-50%);
+}
+
+h1, h2 {
+	font-size: 4rem;
+}

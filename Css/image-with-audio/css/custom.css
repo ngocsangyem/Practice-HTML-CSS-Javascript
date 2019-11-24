@@ -27,4 +27,11 @@ body {
           transform: translate(-50%, -50%);
   color: #ffffff;
 }
+
+.audio-container img {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*# sourceMappingURL=custom.css.map */

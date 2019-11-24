@@ -13,11 +13,36 @@
 	</head>
 
 	<body>
-		<div class="audio-container js-audio audio-active audio-init">
-			<audio src="https://www.ourbetterworld.org/sites/default/files/2019-10/Accident%20Scene%20Witness%204.mp3"
-				class="audio"></audio>
-			<div class="obw-audio-button">
-				<i class="fas fa-volume-mute"></i>
+		<div class="audio-button-container audio-init js-audio audio-has-animation">
+			<audio src="./audio/Accident Scene Witness 4.mp3" class="audio"></audio>
+			<div class="audio-actions">
+				<div class="audio-action audio-action-play">
+					<div class="audio-icon audio-icon-play">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" preserveAspectRatio="xMidYMin slice"
+							width="100%" style=" overflow: visible">
+							<path d="M0 0v6l6-3-6-3z" transform="translate(1 1)"></path>
+						</svg>
+					</div>
+					<span class="audio-text audio-text-play">Play and Read</span>
+				</div>
+				<div class="audio-action audio-action-pause">
+					<div class="audio-icon audio-icon-pause">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" preserveAspectRatio="xMidYMin slice"
+							width="100%" style=" overflow: visible">
+							<path d="M0 0v6h2v-6h-2zm4 0v6h2v-6h-2z" transform="translate(1 1)"></path>
+						</svg>
+					</div>
+					<span class="audio-text audio-text-pause">Pause</span>
+				</div>
+				<div class="audio-action audio-action-resume">
+					<div class="audio-icon audio-icon-resume">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" preserveAspectRatio="xMidYMin slice"
+							width="100%" style=" overflow: visible">
+							<path d="M0 0v6l6-3-6-3z" transform="translate(1 1)"></path>
+						</svg>
+					</div>
+					<span class="audio-text audio-text-resume">Resume</span>
+				</div>
 			</div>
 		</div>
 		<div class="empty-block">
@@ -94,6 +119,16 @@
 			<h3>No sound in here</h3>
 		</div>
 		<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+		<!-- Google Tag Manager -->
+		<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-M2WP4K');</script>
+		<!-- End Google Tag Manager -->
 		<script src="./js/main.js"></script>
 	</body>
 
