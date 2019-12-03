@@ -1,62 +1,87 @@
-body, html {
+body,
+html {
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #333333;
   font-weight: 400;
-  background-color: #34495e; }
+  background-color: #34495e;
+}
 
 img {
   display: block;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .gallery-container {
-  color: #ffffff; }
+  color: #ffffff;
+}
+
 .gallery-title {
-  text-align: center; }
+  text-align: center;
+}
+
 .gallery-tab {
   padding-right: 15px;
-  padding-left: 15px; }
-  .gallery-tab-list {
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    height: 48px;
-    width: 100%;
-    background-color: #fff;
-    white-space: nowrap;
-    display: flex;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-    color: #333333;
-    margin: 0;
-    justify-content: space-around; }
-    .gallery-tab-list-item {
-      padding: 0 12px;
-      cursor: pointer;
-      user-select: none;
-      width: 100%;
-      text-align: center;
-      font-size: 16px;
-      margin: 0;
-      line-height: 48px;
-      transition: all 0.3s ease-in-out; }
-      .gallery-tab-list-item:hover, .gallery-tab-list-item--active {
-        color: #ffffff;
-        background-color: #f0932b; }
+  padding-left: 15px;
+}
+
+.gallery-tab-list {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 48px;
+  width: 100%;
+  background-color: #fff;
+  white-space: nowrap;
+  display: flex;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  color: #333333;
+  margin: 0;
+  justify-content: space-around;
+}
+
+.gallery-tab-list-item {
+  padding: 0 12px;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  margin: 0;
+  line-height: 48px;
+  transition: all 0.3s ease-in-out;
+}
+
+.gallery-tab-list-item:hover,
+.gallery-tab-list-item--active {
+  color: #ffffff;
+  background-color: #f0932b;
+}
+
 .gallery-body {
   display: flex;
-  overflow: hidden; }
+  overflow: hidden;
+}
+
 .gallery-content {
   height: 500px;
-  overflow: hidden; }
-  .gallery-content-list {
-    display: flex;
-    position: relative;
-    height: 100%; }
-    .gallery-content-list-item {
-      width: 100%;
-      min-width: 100%; }
-  .gallery-content-image {
-    width: 100%;
-    object-fit: cover; }
+  overflow: hidden;
+}
+
+.gallery-content-list {
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.gallery-content-list-item {
+  width: 100%;
+  min-width: 100%;
+}
+
+.gallery-content-image {
+  width: 100%;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=main.css.map */
